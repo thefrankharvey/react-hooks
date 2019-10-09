@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import NewTodo from "./NewTodo";
 import TodoItem from "./TodoItem";
+import Checkbox from "./Checkbox";
 import { Container, List } from "./Styled";
 
 export default class TodoList extends Component {
@@ -52,11 +53,13 @@ export default class TodoList extends Component {
     const { newTodo, todos } = this.state;
     return (
       <Container todos={todos}>
+        < Checkbox />
         <NewTodo
           onSubmit={this.handleNewSubmit}
           value={newTodo}
           onChange={this.handleNewChange}
         />
+        
         {!!todos.length && (
           <List>
             {todos.map(todo => (
